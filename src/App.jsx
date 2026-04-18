@@ -31,21 +31,21 @@ const App = () => {
           title: "Especialista en Soporte para Tecnología", 
           date: "Abril 2025 - Actualidad", 
           desc: "Administración de servidores críticos y servicios nube.",
-          img: "/imagenes/prodominicana.png"
+          img: "prodominicana.png"
         },
         { 
           company: "Grupo Hospifar S.R.L.", 
           title: "Soporte Técnico", 
           date: "Feb 2024 - Abr 2025", 
           desc: "Gestión de firewalls Fortinet y redes corporativas.",
-          img: "/imagenes/hospifar.png"
+          img: "hospifar.png"
         },
         { 
           company: "VZ Controles Industriales", 
           title: "Soporte Técnico de Infraestructura", 
           date: "Ago 2022 - Feb 2024", 
           desc: "Configuración de Netgate y servidores web IIS.",
-          img: "/imagenes/vzcontroles.png"
+          img: "vzcontroles.png"
         }
       ],
       infraList: [
