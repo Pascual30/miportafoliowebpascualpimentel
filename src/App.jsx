@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Server, Code, Terminal, Cpu, Mail, Globe, ShieldCheck, Network, Box, Database, Activity, ExternalLink, Package, Layout
+  Server, Code, Terminal, Cpu, Mail, Globe, ShieldCheck, Network, Box, Database, Activity, ExternalLink, Package, Layout, Download
 } from 'lucide-react';
 import './App.css';
 
@@ -17,6 +17,7 @@ const App = () => {
       devProjects: "Software y Desarrollo Web",
       skills: "Stack Tecnológico",
       contact: "Contacto",
+      downloadCV: "Descargar CV",
       btnLang: "English Version",
       skillsList: [
         { icon: <Server color="#3b82f6" />, title: "Servidores y Sistemas", desc: "Linux (Avanzado), Proxmox, Docker, Windows Server, IIS." },
@@ -25,9 +26,27 @@ const App = () => {
         { icon: <Code color="#3b82f6" />, title: "Programación", desc: "C#, Java, PHP, JavaScript (ES6+), React (Básico)." }
       ],
       jobs: [
-        { company: "ProDominicana", title: "Especialista en Soporte para Tecnología", date: "Abril 2025 - Actualidad", desc: "Administración de servidores críticos y servicios nube." },
-        { company: "Grupo Hospifar S.R.L.", title: "Soporte Técnico", date: "Feb 2024 - Abr 2025", desc: "Gestión de firewalls Fortinet y redes corporativas." },
-        { company: "VZ Controles Industriales", title: "Soporte Técnico de Infraestructura", date: "Ago 2022 - Feb 2024", desc: "Configuración de Netgate y servidores web IIS." }
+        { 
+          company: "ProDominicana", 
+          title: "Especialista en Soporte para Tecnología", 
+          date: "Abril 2025 - Actualidad", 
+          desc: "Administración de servidores críticos y servicios nube.",
+          img: "/imagenes/prodominicana.png"
+        },
+        { 
+          company: "Grupo Hospifar S.R.L.", 
+          title: "Soporte Técnico", 
+          date: "Feb 2024 - Abr 2025", 
+          desc: "Gestión de firewalls Fortinet y redes corporativas.",
+          img: "/imagenes/hospifar.png"
+        },
+        { 
+          company: "VZ Controles Industriales", 
+          title: "Soporte Técnico de Infraestructura", 
+          date: "Ago 2022 - Feb 2024", 
+          desc: "Configuración de Netgate y servidores web IIS.",
+          img: "/imagenes/vzcontroles.png"
+        }
       ],
       infraList: [
         { title: "Virtualización Proxmox", desc: "Hipervisor para nodos aislados y contenedores LXC.", tech: ["Proxmox", "LXC"], icon: <Server size={20} />, img: "/imagenes/proxmox.png" },
@@ -73,6 +92,7 @@ const App = () => {
       devProjects: "Software & Web Development",
       skills: "Tech Stack",
       contact: "Contact",
+      downloadCV: "Download CV",
       btnLang: "Versión Español",
       skillsList: [
         { icon: <Server color="#3b82f6" />, title: "Servers & Systems", desc: "Linux (Advanced), Proxmox, Docker, Windows Server, IIS." },
@@ -81,9 +101,9 @@ const App = () => {
         { icon: <Code color="#3b82f6" />, title: "Programming", desc: "C#, Java, PHP, JavaScript (ES6+), React (Basic)." }
       ],
       jobs: [
-        { company: "ProDominicana", title: "IT Support Specialist", date: "April 2025 - Present", desc: "Critical server and cloud services administration." },
-        { company: "Grupo Hospifar S.R.L.", title: "Technical Support", date: "Feb 2024 - April 2025", desc: "Fortinet firewall and corporate network management." },
-        { company: "VZ Controles Industriales", title: "Infrastructure Support", date: "Aug 2022 - Feb 2024", desc: "Netgate and IIS web server configuration." }
+        { company: "ProDominicana", title: "IT Support Specialist", date: "April 2025 - Present", desc: "Critical server and cloud services administration.", img: "/imagenes/prodominicana.png" },
+        { company: "Grupo Hospifar S.R.L.", title: "Technical Support", date: "Feb 2024 - April 2025", desc: "Fortinet firewall and corporate network management.", img: "/imagenes/hospifar.png" },
+        { company: "VZ Controles Industriales", title: "Infrastructure Support", date: "Aug 2022 - Feb 2024", desc: "Netgate and IIS web server configuration.", img: "/imagenes/vzcontroles.png" }
       ],
       infraList: [
         { title: "Proxmox Virtualization", desc: "Hypervisor for isolated nodes and LXC containers.", tech: ["Proxmox", "LXC"], icon: <Server size={20} />, img: "/imagenes/proxmox.png" },
@@ -125,12 +145,17 @@ const App = () => {
             <p className="hero-bio">{t.about}</p>
             <div className="hero-links">
               <a href="https://www.linkedin.com/in/pascual-pimentel-vicente-bb8438247" target="_blank" rel="noreferrer" className="btn-primary">LinkedIn</a>
+              
+              <a href="/Pascual.pdf" download="CV_Pascual_Pimentel.pdf" className="btn-secondary">
+                <Download size={20} /> {t.downloadCV}
+              </a>
+
               <a href="mailto:tu-correo@ejemplo.com" className="btn-secondary"><Mail size={20} /> {t.contact}</a>
             </div>
           </div>
         </motion.section>
 
-        {/* SKILLS */}
+        {/* HABILIDADES */}
         <section className="section-block">
           <h3><Terminal size={22} /> {t.skills}</h3>
           <motion.div className="skills-grid" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -144,7 +169,7 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* INFRA PROJECTS */}
+        {/* PROYECTOS */}
         <section className="section-block">
           <h3><Server size={22} /> {t.infraProjects}</h3>
           <motion.div className="projects-grid-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -161,7 +186,7 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* WEB DEV PROJECTS */}
+        {/* WEB PROYECTOS */}
         <section className="section-block">
           <h3><Code size={22} /> {t.devProjects}</h3>
           <motion.div className="projects-grid-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -182,17 +207,35 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* EXPERIENCE */}
+        {/* EXPERIENCIA */}
         <section className="section-block">
           <h3><ShieldCheck size={22} /> {t.experience}</h3>
           <motion.div className="timeline-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             {t.jobs.map((job, i) => (
               <motion.div key={i} className="timeline-card" variants={itemVariants}>
                 <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <h4>{job.title}</h4>
-                  <span className="timeline-meta">{job.company} • {job.date}</span>
-                  <p>{job.desc}</p>
+                <div className="timeline-content" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  {job.img && (
+                    <div style={{ 
+                      width: '65px', 
+                      height: '65px', 
+                      backgroundColor: '#ffffff', 
+                      borderRadius: '12px', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      padding: '8px',
+                      flexShrink: 0,
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                    }}>
+                      <img src={job.img} alt={job.company} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                    </div>
+                  )}
+                  <div style={{ flex: 1, minWidth: '200px' }}>
+                    <h4>{job.title}</h4>
+                    <span className="timeline-meta">{job.company} • {job.date}</span>
+                    <p style={{ margin: 0 }}>{job.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
