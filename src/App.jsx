@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Server, Code, Terminal, Cpu, Mail, Globe, ShieldCheck, HardDrive, Network, Box, Database, Activity 
 } from 'lucide-react';
 import './App.css';
-
-// --- PLAN NUCLEAR: IMPORTACIÓN DIRECTA DE IMÁGENES ---
-// Al importarlas así, Vercel está obligado a procesarlas sin errores de rutas.
-import imgProxmox from './imagenes/proxmox.png';
-import imgDocker from './imagenes/docker.png';
-import imgOpenwrt from './imagenes/openwrt.png';
 
 const App = () => {
   const [lang, setLang] = useState('es');
@@ -49,21 +43,21 @@ const App = () => {
           desc: "Gestión de hipervisor Proxmox para el despliegue de nodos aislados, contenedores LXC y máquinas virtuales.", 
           tech: ["Proxmox", "LXC", "Hypervisor"],
           icon: <Server size={20} />,
-          img: imgProxmox // Usamos la variable importada
+          img: "/imagenes/proxmox.png"
         },
         { 
           title: "Infraestructura en Contenedores", 
           desc: "Despliegue y orquestación de microservicios utilizando Docker y Docker Compose para optimización de recursos.", 
           tech: ["Docker", "Containers", "Self-hosting"],
           icon: <Box size={20} />,
-          img: imgDocker // Usamos la variable importada
+          img: "/imagenes/docker.png"
         },
         { 
           title: "Redes Avanzadas con OpenWRT", 
           desc: "Configuración de enrutamiento avanzado y seguridad perimetral mediante firmware personalizado OpenWRT.", 
           tech: ["OpenWRT", "Networking", "Routing"],
           icon: <Network size={20} />,
-          img: imgOpenwrt // Usamos la variable importada
+          img: "/imagenes/openwrt.png"
         },
         { 
           title: "Recuperación RAID 6", 
@@ -94,9 +88,9 @@ const App = () => {
         { company: "VZ Controles Industriales", title: "Infrastructure Support", date: "August 2022 - February 2024", desc: "Netgate firewall configuration, IIS web server management, and SQL database maintenance." }
       ],
       projectList: [
-        { title: "Proxmox VE Virtualization", desc: "Proxmox hypervisor management for deploying isolated nodes, LXC containers, and virtual machines.", tech: ["Proxmox", "LXC", "Hypervisor"], icon: <Server size={20} />, img: imgProxmox },
-        { title: "Containerized Infrastructure", desc: "Microservices deployment and orchestration using Docker and Docker Compose for resource optimization.", tech: ["Docker", "Containers", "Self-hosting"], icon: <Box size={20} />, img: imgDocker },
-        { title: "Advanced Networking (OpenWRT)", desc: "Advanced routing configuration and perimeter security using custom OpenWRT firmware.", tech: ["OpenWRT", "Networking", "Routing"], icon: <Network size={20} />, img: imgOpenwrt },
+        { title: "Proxmox VE Virtualization", desc: "Proxmox hypervisor management for deploying isolated nodes, LXC containers, and virtual machines.", tech: ["Proxmox", "LXC", "Hypervisor"], icon: <Server size={20} />, img: "/imagenes/proxmox.png" },
+        { title: "Containerized Infrastructure", desc: "Microservices deployment and orchestration using Docker and Docker Compose for resource optimization.", tech: ["Docker", "Containers", "Self-hosting"], icon: <Box size={20} />, img: "/imagenes/docker.png" },
+        { title: "Advanced Networking (OpenWRT)", desc: "Advanced routing configuration and perimeter security using custom OpenWRT firmware.", tech: ["OpenWRT", "Networking", "Routing"], icon: <Network size={20} />, img: "/imagenes/openwrt.png" },
         { title: "RAID 6 Recovery", desc: "Data rescue from a degraded 10TB array on Thecus NAS via advanced terminal management.", tech: ["mdadm", "RAID 6", "Linux"], icon: <Terminal size={20} />, img: null }
       ]
     }
