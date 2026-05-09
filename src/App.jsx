@@ -55,6 +55,13 @@ const App = () => {
       ],
       devList: [
         { 
+          title: "PSA Airlines (Reserva de Vuelos)", 
+          desc: "Prototipo funcional de interfaz gráfica para un sistema de aerolíneas (Caso 6).", 
+          tech: ["React", "JavaScript", "Vite"], 
+          link: "https://pascual30.github.io/PSASolutionAirlines/",
+          icon: <Code size={20} /> 
+        },
+        { 
           title: "RutasDR (GuaguaTimeRD)", 
           desc: "PWA 100% offline para consulta de rutas de transporte en RD. Optimizada para rendimiento móvil.", 
           tech: ["PWA", "JSON", "Service Workers"], 
@@ -111,6 +118,13 @@ const App = () => {
         { title: "OpenWRT Networking", desc: "Advanced network segmentation and perimeter security.", tech: ["OpenWRT", "Routing"], icon: <Network size={20} />, img: "/imagenes/openwrt.png" }
       ],
       devList: [
+        { 
+          title: "PSA Airlines (Flight Booking)", 
+          desc: "Functional GUI prototype for an airline reservation system (Case 6).", 
+          tech: ["React", "JavaScript", "Vite"], 
+          link: "https://pascual30.github.io/PSASolutionAirlines/",
+          icon: <Code size={20} /> 
+        },
         { title: "RutasDR", desc: "100% offline PWA for transport routes in DR. Optimized for mobile performance.", tech: ["PWA", "JSON", "Service Workers"], link: "https://pascual30.github.io/GuaguaTimeRD/", icon: <Globe size={20} /> },
         { title: "BBX Courier Calc", desc: "Logistics cost calculator based on weight and dynamic rates.", tech: ["JS", "CSS", "HTML"], link: "https://pascual30.github.io/proyectobbxcourrier/", icon: <Package size={20} /> },
         { title: "Identity Validator", desc: "Dominican ID validation algorithm with responsive UI.", tech: ["JS", "RegEx", "Logic"], link: "https://pascual30.github.io/githublab/", icon: <ShieldCheck size={20} /> },
