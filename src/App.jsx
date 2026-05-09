@@ -31,21 +31,21 @@ const App = () => {
           title: "Especialista en Soporte para Tecnología", 
           date: "Abril 2025 - Actualidad", 
           desc: "Administración de servidores críticos y servicios nube.",
-          img: "prodominicana.png"
+          img: "/prodominicana.png" 
         },
         { 
           company: "Grupo Hospifar S.R.L.", 
           title: "Soporte Técnico", 
           date: "Feb 2024 - Abr 2025", 
           desc: "Gestión de firewalls Fortinet y redes corporativas.",
-          img: "hospifar.png"
+          img: "/hospifar.png" 
         },
         { 
           company: "VZ Controles Industriales", 
           title: "Soporte Técnico de Infraestructura", 
           date: "Ago 2022 - Feb 2024", 
           desc: "Configuración de Netgate y servidores web IIS.",
-          img: "vzcontroles.png"
+          img: "/vzcontroles.png" 
         }
       ],
       infraList: [
@@ -108,9 +108,9 @@ const App = () => {
         { icon: <Code color="#3b82f6" />, title: "Programming", desc: "C#, Java, PHP, JavaScript (ES6+), React (Basic)." }
       ],
       jobs: [
-        { company: "ProDominicana", title: "IT Support Specialist", date: "April 2025 - Present", desc: "Critical server and cloud services administration.", img: "/imagenes/prodominicana.png" },
-        { company: "Grupo Hospifar S.R.L.", title: "Technical Support", date: "Feb 2024 - April 2025", desc: "Fortinet firewall and corporate network management.", img: "/imagenes/hospifar.png" },
-        { company: "VZ Controles Industriales", title: "Infrastructure Support", date: "Aug 2022 - Feb 2024", desc: "Netgate and IIS web server configuration.", img: "/imagenes/vzcontroles.png" }
+        { company: "ProDominicana", title: "IT Support Specialist", date: "April 2025 - Present", desc: "Critical server and cloud services administration.", img: "/prodominicana.png" },
+        { company: "Grupo Hospifar S.R.L.", title: "Technical Support", date: "Feb 2024 - April 2025", desc: "Fortinet firewall and corporate network management.", img: "/hospifar.png" },
+        { company: "VZ Controles Industriales", title: "Infrastructure Support", date: "Aug 2022 - Feb 2024", desc: "Netgate and IIS web server configuration.", img: "/vzcontroles.png" }
       ],
       infraList: [
         { title: "Proxmox Virtualization", desc: "Hypervisor for isolated nodes and LXC containers.", tech: ["Proxmox", "LXC"], icon: <Server size={20} />, img: "/imagenes/proxmox.png" },
@@ -118,13 +118,7 @@ const App = () => {
         { title: "OpenWRT Networking", desc: "Advanced network segmentation and perimeter security.", tech: ["OpenWRT", "Routing"], icon: <Network size={20} />, img: "/imagenes/openwrt.png" }
       ],
       devList: [
-        { 
-          title: "PSA Airlines (Flight Booking)", 
-          desc: "Functional GUI prototype for an airline reservation system (Case 6).", 
-          tech: ["React", "JavaScript", "Vite"], 
-          link: "https://pascual30.github.io/PSASolutionAirlines/",
-          icon: <Code size={20} /> 
-        },
+        { title: "PSA Airlines (Flight Booking)", desc: "Functional GUI prototype for an airline reservation system (Case 6).", tech: ["React", "JavaScript", "Vite"], link: "https://pascual30.github.io/PSASolutionAirlines/", icon: <Code size={20} /> },
         { title: "RutasDR", desc: "100% offline PWA for transport routes in DR. Optimized for mobile performance.", tech: ["PWA", "JSON", "Service Workers"], link: "https://pascual30.github.io/GuaguaTimeRD/", icon: <Globe size={20} /> },
         { title: "BBX Courier Calc", desc: "Logistics cost calculator based on weight and dynamic rates.", tech: ["JS", "CSS", "HTML"], link: "https://pascual30.github.io/proyectobbxcourrier/", icon: <Package size={20} /> },
         { title: "Identity Validator", desc: "Dominican ID validation algorithm with responsive UI.", tech: ["JS", "RegEx", "Logic"], link: "https://pascual30.github.io/githublab/", icon: <ShieldCheck size={20} /> },
@@ -151,7 +145,8 @@ const App = () => {
         <motion.section className="hero-section" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="hero-content">
             <div className="profile-wrapper">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQGOZG6jDye-dA/profile-displayphoto-shrink_200_200/B4EZPPdMcSGcAc-/0/1734352358021?e=1778112000&v=beta&t=lk-bxauM7_T6jJd_cETlEUGyZCazTlvCu-xTj0mfOQI" className="profile-pic" alt="Pascual" />
+              {/* AQUÍ ESTÁ EL CAMBIO DE LA FOTO DE PERFIL A pascual.jpg */}
+              <img src="/pascual.jpg" className="profile-pic" alt="Pascual" />
               <div className="status-badge"><Activity size={12} /> Online</div>
             </div>
             <h1>Pascual Pimentel Vicente</h1>
@@ -183,7 +178,7 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* PROYECTOS */}
+        {/* PROYECTOS INFRAESTRUCTURA */}
         <section className="section-block">
           <h3><Server size={22} /> {t.infraProjects}</h3>
           <motion.div className="projects-grid-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -200,7 +195,7 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* WEB PROYECTOS */}
+        {/* PROYECTOS DESARROLLO WEB */}
         <section className="section-block">
           <h3><Code size={22} /> {t.devProjects}</h3>
           <motion.div className="projects-grid-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -221,7 +216,7 @@ const App = () => {
           </motion.div>
         </section>
 
-        {/* EXPERIENCIA */}
+        {/* EXPERIENCIA (TIMELINE) */}
         <section className="section-block">
           <h3><ShieldCheck size={22} /> {t.experience}</h3>
           <motion.div className="timeline-modern" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
